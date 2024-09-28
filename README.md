@@ -1,6 +1,6 @@
 <div id="header" align="center">
-    <h1>Kloudy</h1>
-    <h3>🗃️ File storage</h3>
+    <h1>Config Center</h1>
+    <h3>🧰 Configuration Server</h3>
 </div>
 
 <div id="badges" align="center">
@@ -16,6 +16,8 @@
 
 ## 📋 About
 
+Simple configuration server based on `Spring Boot 3`
+
 ## ⚠️ Requirements
 
 ## ▶️ Run
@@ -23,6 +25,10 @@
 ### 🛠️ Intellij
 
 ### 🚢 Docker
+
+```shell
+docker compose build -d
+```
 
 ### 🗂️ Docker compose
 
