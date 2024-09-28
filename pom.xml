@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.github.justedlev.msrvs</groupId>
-    <artifactId>cinfig-center</artifactId>
+    <artifactId>config-center</artifactId>
     <version>0.0.1</version>
     <name>config-center</name>
     <description>Configuration Server</description>
