@@ -1,0 +1,11 @@
+name: justedlev-msrv
+services:
+  server:
+    container_name: config-center
+    image: justedlev/config-center:latest
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - '8976:${SERVER_PORT}'

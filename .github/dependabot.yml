@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    reviewers:
+      - "justedlev"
+    assignees:
+      - "justedlev"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    reviewers:
+      - "justedlev"
+    assignees:
+      - "justedlev"
+    schedule:
+      interval: "weekly"
