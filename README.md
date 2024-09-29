@@ -18,19 +18,32 @@
 
 Simple configuration server based on `Spring Boot 3`
 
-## ⚠️ Requirements
+## 🧾 References
+
+- [Externalized Configuration](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.typesafe-configuration-properties.relaxed-binding.environment-variables)
+- [Docker CLI](https://docs.docker.com/reference/cli/docker/compose/)
 
 ## ▶️ Run
 
-### 🛠️ Intellij
+### <a href="#"><img src="https://github.com/JetBrains/logos/raw/refs/heads/master/web/intellij-idea/intellij-idea.svg" width="16"/></a> Intellij
 
-### 🚢 Docker
+You can use the simple [run configuration](/.run/Default.run.xml), that based on [.env](/.env)
+and [jvm options](/.vmoptions) to run the app locally
+
+### 🐳 Docker
+
+First build your amazing 😁 `docker compose` file and then run using the below cmd
 
 ```shell
 docker compose build -d
 ```
 
+> [!TIP]
+> I already prepared some image on [🐳 docker hub](https://hub.docker.com/repository/docker/justedlev/config-center)
+
 ### 🗂️ Docker compose
+
+An example of the `docker compose` file based on the same [.env](/.env) as in [Run](#-run)
 
 ```yaml
 name: justedlev-msrv
