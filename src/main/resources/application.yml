@@ -1,12 +1,21 @@
+server:
+  port: 8976
+  error:
+    include-message: always
 spring:
   application:
     name: '@project.name@'
+  profiles:
+    active: native
+  security:
+    user:
+      name: ${spring.application.name}
   cloud:
     config:
       server:
         native:
-          search-locations:
-            - ./static
+          search-locations: file:/
+          default-label: main
 management:
   info:
     build:
@@ -36,10 +45,10 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      default-zone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://eureka:example@${eureka.instance.hostname}:8761/eureka/
 logging:
   file:
-    path: ./logs
+    path: /var/log/${spring.application.name}
     name: ${logging.file.path}/latest.log
   threshold:
     file: INFO
