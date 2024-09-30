@@ -1,5 +1,7 @@
 server:
   port: 8888
+  servlet:
+    application-display-name: ${spring.application.name}
   error:
     include-message: always
 spring:
@@ -9,12 +11,14 @@ spring:
     active: native
   security:
     user:
-      name: ${spring.application.name}
+      name: root
+      password: root
+      roles: system
   cloud:
     config:
       server:
         native:
-          search-locations: file:/
+          search-locations: file:./config.d
           default-label: main
 management:
   info:
