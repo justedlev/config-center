@@ -48,8 +48,8 @@ An example of the `docker compose` file based on the same [.env](/.env) as in [R
 ```yaml
 name: justedlev-msrv
 services:
-  server:
-    container_name: config-center
+  configuration-server:
+    container_name: ${SPRING_APPLICATION_NAME}
     image: justedlev/config-center:latest
     build:
       context: .
@@ -57,4 +57,7 @@ services:
       - .env
     ports:
       - '8976:${SERVER_PORT}'
+    volumes:
+      - ./config.d:${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
+      - ./logs:/var/log/${SPRING_APPLICATION_NAME}
 ```
