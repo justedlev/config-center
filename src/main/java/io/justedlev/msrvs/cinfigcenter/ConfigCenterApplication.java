@@ -7,7 +7,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
-@EnableDiscoveryClient
 @EnableConfigServer
 @EnableConfigurationProperties({
         SecurityProperties.class,

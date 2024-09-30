@@ -37,15 +37,6 @@ management:
     web:
       exposure:
         include: '*'
-eureka:
-  instance:
-    instance-id: ${spring.application.name}
-    app-group-name: justedlev-msrv
-    appname: ${spring.application.name}
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://eureka:example@${eureka.instance.hostname}:8761/eureka/
 logging:
   file:
     path: /var/log/${spring.application.name}
