@@ -1,4 +1,4 @@
-package io.justedlev.msrvs.cinfigcenter.configuration;
+package io.justedlev.msrvs.configcenter.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
