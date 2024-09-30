@@ -7,7 +7,7 @@
     <selectedOptions>
       <option name="environmentVariables" />
     </selectedOptions>
-    <option name="SPRING_BOOT_MAIN_CLASS" value="io.justedlev.msrvs.cinfigcenter.ConfigCenterApplication" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="io.justedlev.msrvs.configcenter.ConfigCenterApplication" />
     <option name="VM_PARAMETERS" value="@.vmoptions" />
     <method v="2">
       <option name="Make" enabled="true" />
