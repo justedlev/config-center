@@ -1,6 +1,6 @@
-package io.justedlev.msrvs.cinfigcenter;
+package io.justedlev.msrvs.configcenter;
 
-import io.justedlev.msrvs.cinfigcenter.configuration.SecurityProperties;
+import io.justedlev.msrvs.configcenter.configuration.SecurityProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
