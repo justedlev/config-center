@@ -44,7 +44,7 @@ management:
 logging:
   file:
     path: ./logs
-    name: ${logging.file.path}/latest.log
+    name: ${LOGGING_FILE_PATH:${logging.file.path}}/latest.log
   threshold:
     file: INFO
     console: INFO
