@@ -21,6 +21,7 @@ jobs:
 
   test:
     name: Test Docker image
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +30,7 @@ jobs:
 
   push_to_registry:
     name: Push Docker image to Docker Hub
+    needs: [ build, test ]
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
