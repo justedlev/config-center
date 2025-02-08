@@ -11,6 +11,10 @@
 # Create a stage for resolving and downloading dependencies.
 FROM eclipse-temurin:17-jdk-jammy AS deps
 
+LABEL maintainer="Justedlev"
+LABEL name="config-center"
+LABEL description="Config Center"
+
 WORKDIR /build
 
 # Copy the mvnw wrapper with executable permissions.
