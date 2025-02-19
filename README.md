@@ -16,7 +16,7 @@
 
 ## 📋 About
 
-Simple configuration server based on `Spring Boot 3`
+Simple configuration server based on `🍃 Spring Boot 3` and `🐰 RabbitMQ`
 
 ## 🧾 References
 
@@ -49,15 +49,74 @@ An example of the `docker compose` file based on the same [.env](/.env) as in [R
 name: justedlev-msrv
 services:
   configuration-server:
-    container_name: ${SPRING_APPLICATION_NAME}
+    container_name: config-center
     image: justedlev/config-center:latest
-    build:
-      context: .
-    env_file:
-      - .env
     ports:
       - '8976:${SERVER_PORT}'
     volumes:
       - ./config.d:${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
       - ./logs:/var/log/${SPRING_APPLICATION_NAME}
+  config.justedlev.com:
+    tty: true
+    environment:
+      - SERVER_PORT=8888
+      - SPRING_APPLICATION_NAME=config-center
+      - SPRING_SECURITY_USER_NAME={example}
+      - SPRING_SECURITY_USER_PASSWORD={example}
+      - SPRING_SECURITY_USER_ROLES=system
+      - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION=/config.d
+      - LOGGING_FILE_PATH=/var/log/$${SPRING_APPLICATION_NAME}
+      - SPRING_RABBITMQ_HOST=localhost
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME={example}
+      - SPRING_RABBITMQ_PASSWORD={example}
+    container_name: config-center
+    image: justedlev/config-center:latest
+    ports:
+      - '8888:8888'
+    healthcheck:
+      test: [ "CMD", "curl", "-k", "-f", "http://localhost:$${SERVER_PORT}/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    volumes:
+      - ./config.d:$${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
+      - ./logs/$${SPRING_APPLICATION_NAME}:$${LOGGING_FILE_PATH}
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 250MB
+          
+  #🐰 RabbitMQ
+  rabbitmq:
+    tty: true
+    environment:
+      - RABBITMQ_DEFAULT_USER=rabbit
+      - RABBITMQ_DEFAULT_PASS=rabbit
+      - RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS=-rabbit disk_free_limit 2147483648
+    container_name: rabbitmq
+    image: rabbitmq:management
+    hostname: rabbitmq
+    restart: unless-stopped
+    volumes:
+      - ./data/rabbitmq:/var/lib/rabbitmq
+    ports:
+      - "5672:5672"   # AMQP
+      - "15672:15672" # Management UI
+    healthcheck:
+      test: [ "CMD", "rabbitmq-diagnostics", "-q", "ping" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 500MB
 ```
