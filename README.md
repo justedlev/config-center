@@ -66,6 +66,10 @@ services:
       - SPRING_SECURITY_USER_ROLES=system
       - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION=/config.d
       - LOGGING_FILE_PATH=/var/log/$${SPRING_APPLICATION_NAME}
+      - SPRING_RABBITMQ_HOST=localhost
+      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_USERNAME={example}
+      - SPRING_RABBITMQ_PASSWORD={example}
     container_name: config-center
     image: justedlev/config-center:latest
     ports:
