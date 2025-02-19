@@ -39,10 +39,7 @@ logging:
     path: ./logs
     name: ${LOGGING_FILE_PATH:${logging.file.path}}/latest.log
   threshold:
-    file: INFO
-    console: INFO
-  level:
-    root: debug
+    console: info
 security:
   whitelist:
     GET:
