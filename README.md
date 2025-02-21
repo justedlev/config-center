@@ -25,11 +25,6 @@ Simple configuration server based on `🍃 Spring Boot 3` and `🐰 RabbitMQ`
 
 ## ▶️ Run
 
-### <a href="#"><img src="https://github.com/JetBrains/logos/raw/refs/heads/master/web/intellij-idea/intellij-idea.svg" width="16"/></a> Intellij
-
-You can use the simple [run configuration](/.run/Default.run.xml), that based on [.env](/.env)
-and [jvm options](/.vmoptions) to run the app locally
-
 ### 🐳 Docker
 
 First build your amazing 😁 `docker compose` file and then run using the below cmd
@@ -43,7 +38,7 @@ docker compose build -d
 
 ### 🗂️ Docker compose
 
-An example of the `docker compose` file based on the same [.env](/.env) as in [Run](#-run)
+An example of the `docker compose` file based on the same [.env](/.env)
 
 ```yaml
 name: justedlev-msrv
