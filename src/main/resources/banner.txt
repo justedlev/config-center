@@ -1,8 +1,8 @@
-${AnsiColor.65}       __              __${AnsiColor.DEFAULT}          _           _           _ _
-${AnsiColor.65}   ___/ /    ___   ___ \ \__${AnsiColor.DEFAULT}      | |_   _ ___| |_ ___  __| | | _____   __
-${AnsiColor.65}  / / //    /   \ /   \ \ \\\${AnsiColor.DEFAULT}  _  | | | | / __| __/ _ \/ _` | |/ _ \ \ / /${AnsiColor.BRIGHT_BLACK}(_)___${AnsiColor.DEFAULT}
-${AnsiColor.65} / / / \    \___/ \___/ / / \\${AnsiColor.DEFAULT}| |_| | |_| \__ \ ||  __/ (_| | |  __/\ V / ${AnsiColor.BRIGHT_BLACK}| / _ \${AnsiColor.DEFAULT}
-${AnsiColor.65}/_/_/ \_\              /_/ \_\\${AnsiColor.DEFAULT}\___/ \__,_|___/\__\___|\__,_|_|\___| \_/${AnsiColor.BRIGHT_BLACK}(_)_\___/${AnsiColor.DEFAULT}
+${AnsiColor.65}       __              __ ${AnsiColor.DEFAULT}          _           _           _ _
+${AnsiColor.65}   ___/ /    ___   ___ \ \__ ${AnsiColor.DEFAULT}      | |_   _ ___| |_ ___  __| | | _____   __
+${AnsiColor.65}  / / //    /   \ /   \ \ \\\ ${AnsiColor.DEFAULT}  _  | | | | / __| __/ _ \/ _` | |/ _ \ \ / /${AnsiColor.BRIGHT_BLACK}(_)___ ${AnsiColor.DEFAULT}
+${AnsiColor.65} / / / \    \___/ \___/ / / \\ ${AnsiColor.DEFAULT}| |_| | |_| \__ \ ||  __/ (_| | |  __/\ V / ${AnsiColor.BRIGHT_BLACK}| / _ \ ${AnsiColor.DEFAULT}
+${AnsiColor.65}/_/_/ \_\              /_/ \_\\ ${AnsiColor.DEFAULT}\___/ \__,_|___/\__\___|\__,_|_|\___| \_/${AnsiColor.BRIGHT_BLACK}(_)_\___/ ${AnsiColor.DEFAULT}
 ${spring.application.name}:${application.formatted-version}
 Spring Boot:${spring-boot.formatted-version}
 ${application.title}
