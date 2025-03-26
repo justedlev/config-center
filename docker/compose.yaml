@@ -1,0 +1,21 @@
+name: justedlev-msrv
+services:
+  config.justedlev.io:
+    tty: true
+    env_file:
+      - .env
+    container_name: config-center
+    image: justedlev/config-center:latest
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8888:${SERVER_PORT}"
+    volumes:
+      - ./config.d:${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
+      - ./logs:${LOGGING_FILE_PATH}
+    deploy:
+      resources:
+        limits:
+          cpus: "0.75"
+          memory: 512MB
