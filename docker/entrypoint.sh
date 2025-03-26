@@ -9,4 +9,4 @@
 ########################################################################################################################
 
 # Run the Java application with the specified parameters
-java @.vmoptions org.springframework.boot.loader.JarLauncher
+java @.vmoptions org.springframework.boot.loader.launch.JarLauncher
