@@ -11,26 +11,8 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build:
-    name: Build the Docker image
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build the Docker image
-        run: docker compose build --no-cache --force-rm
-
-  test:
-    name: Test Docker image
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Test Docker image
-        run: docker compose up -d
-
-  push_to_registry:
-    name: Push Docker image to Docker Hub
-    needs: [ build, test ]
+  build_and_push:
+    name: Build and Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -45,7 +27,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Extract metadata (tags, labels) for Docker
+      - name: Docker metadata
         id: metadata
         uses: docker/metadata-action@v5
         with:
@@ -57,7 +39,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-          context: "{{defaultContext}}"
+          context: .
+          file: docker/Dockerfile
           push: true
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
