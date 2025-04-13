@@ -1,0 +1,9 @@
+blank_issues_enabled: true
+contact_links:
+  - name: ❓ Ask a question or get help
+    url: https://github.com/justedlev/config-center/discussions
+    about: Use GitHub Discussions for general questions and help.
+
+  - name: 🐛 Report a security vulnerability
+    url: https://github.com/justedlev/config-center/security
+    about: Please report security issues privately here.
