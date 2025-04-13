@@ -1,0 +1,40 @@
+name: ✨ Feature Request
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels:
+  - "type: feature"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        💡 **Got an idea? We want to hear it!**  
+        Please describe your feature request below.
+
+  - type: textarea
+    id: feature
+    attributes:
+      label: 🌟 Feature Description
+      description: What should the feature do? What is the expected behavior?
+      placeholder: Describe your feature as clearly as possible.
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 🚀 Why is this feature important?
+      description: What problem does it solve? Why is this useful?
+      placeholder: Explain the value or use case for this feature.
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 Alternatives considered
+      description: Did you try other approaches or workarounds?
+      placeholder: Describe any alternative solutions you've considered.
+
+  - type: input
+    id: priority
+    attributes:
+      label: 🧭 Priority (optional)
+      description: How urgent is this feature? (low / medium / high)
+      placeholder: e.g. medium

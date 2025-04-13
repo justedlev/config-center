@@ -1,0 +1,13 @@
+addReviewers: true
+numberOfReviewers: 1
+reviewers:
+  - justedlev
+
+addAssignees: true
+numberOfAssignees: 1
+assignees:
+  - author
+
+skipKeywords:
+  - wip
+  - draft

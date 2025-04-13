@@ -1,0 +1,45 @@
+name: 🐞 Bug Report
+description: Report an unexpected problem or behavior
+title: "[Bug]: "
+labels:
+  - "type: bug"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        👋 **Thanks for reporting a bug!**  
+        Please help us by filling out this form as completely as possible 🙏
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 What happened?
+      description: Describe the unexpected behavior, what you expected to happen, and any impact it had.
+      placeholder: A clear and concise description of the bug.
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 📋 Steps to reproduce
+      description: How can we reproduce this bug step by step?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+
+  - type: input
+    id: environment
+    attributes:
+      label: 💻 Environment
+      description: OS, Java version, browser, database, etc.
+      placeholder: e.g. Windows 11, Java 17, Chrome 123
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📄 Logs, screenshots, or stacktrace
+      description: Paste logs or attach screenshots to help us debug.
+      placeholder: |
+        Exception in thread "main" java.lang.NullPointerException...

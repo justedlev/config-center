@@ -1,0 +1,17 @@
+name: 🔄 Auto Assign Reviewer & Assignee
+
+on:
+  pull_request_target:
+    types: [ opened, synchronize, reopened ]
+    branches: [ main ]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  auto-assign:
+    name: Auto-assign contributors
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kentaro-m/auto-assign-action@v2.0.0

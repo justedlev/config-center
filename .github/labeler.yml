@@ -1,0 +1,50 @@
+"area: java":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.java'
+
+"area: ci/cd":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/workflows/**'
+
+"area: config":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/config/**'
+      - '**/*.yml'
+      - '**/*.properties'
+
+"area: spring-boot":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/application.yml'
+      - '**/application.properties'
+      - '**/src/main/java/**/config/**'
+      - '**/src/main/java/**/controller/**'
+      - '**/src/main/resources/**'
+
+"area: docker":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'Dockerfile'
+      - '**/Dockerfile'
+      - 'docker-compose.yml'
+      - '**/docker-compose.yml'
+      - 'compose.yml'
+      - '**/compose.yml'
+      - '**/docker/**'
+
+"type: tests":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/src/test/**'
+      - '**/*Test.java'
+      - '**/*Tests.java'
+
+"type: docs":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.md'
+      - '**/README.md'
+      - '**/docs/**'
