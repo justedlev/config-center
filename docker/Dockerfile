@@ -35,7 +35,7 @@ FROM package AS extract
 WORKDIR /build
 
 # Use Spring Boot's layertools to extract dependencies, snapshots, and application layers
-RUN java -Djarmode=layertools -jar target/app.jar extract --destination target/extracted
+RUN java -Djarmode=tools -jar target/app.jar extract --layers --launcher --destination target/extracted
 
 # ----------< FINAL STAGE >------------
 FROM eclipse-temurin:17-jre-jammy AS final
