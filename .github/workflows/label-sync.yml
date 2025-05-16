@@ -1,0 +1,33 @@
+name: 🔄 Sync GitHub Labels
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/labels.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  sync-labels:
+    name: 🏷️ Sync Labels from YAML
+    runs-on: ubuntu-latest
+    env:
+      REMOTE_CONFIG_URL: https://raw.githubusercontent.com/${{ github.actor }}/github-labels/main
+    steps:
+      - name: 🔁 Sync GitHub labels
+        uses: EndBug/label-sync@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          delete-other-labels: true
+          config-file: |
+            ${{ env.REMOTE_CONFIG_URL }}/language.yml
+            ${{ env.REMOTE_CONFIG_URL }}/priority.yml
+            ${{ env.REMOTE_CONFIG_URL }}/status.yml
+            ${{ env.REMOTE_CONFIG_URL }}/type.yml
+            ${{ env.REMOTE_CONFIG_URL }}/area.yml

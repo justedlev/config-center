@@ -7,19 +7,24 @@ on:
     types: [ created ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
 jobs:
   release:
     name: 📦 Create Release
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      issues: write
     steps:
+      - id: checkout
+        name: 📥 Checkout code
+        uses: actions/checkout@v4
+
       - id: release
         name: 🔄 Run release-please
         uses: googleapis/release-please-action@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: '${{ secrets.RELEASE_PLEASE_TOKEN }}'
           config-file: .github/release-please-config.json
           manifest-file: .github/release-please-manifest.json

@@ -1,31 +1,40 @@
 version: 2
 updates:
   - package-ecosystem: "maven"
-    target-branch: "dev"
     directory: "/"
+    target-branch: "develop"
     reviewers:
       - "justedlev"
     assignees:
       - "justedlev"
+    labels:
+      - "status: review"
+      - "lang: java"
     schedule:
       interval: "weekly"
 
   - package-ecosystem: "github-actions"
-    target-branch: "dev"
     directory: "/"
+    target-branch: "develop"
     reviewers:
       - "justedlev"
     assignees:
       - "justedlev"
+    labels:
+      - "status: review"
+      - "area: ci/cd"
     schedule:
       interval: "weekly"
 
   - package-ecosystem: "docker"
     directory: "docker"
-    target-branch: "dev"
+    target-branch: "develop"
     reviewers:
       - "justedlev"
     assignees:
       - "justedlev"
+    labels:
+      - "status: review"
+      - "area: docker"
     schedule:
       interval: "weekly"
