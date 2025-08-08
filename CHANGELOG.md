@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.5.0](https://github.com/justedlev/config-center/compare/v1.4.2...v1.5.0) (2025-08-08)
+
+
+### 🚀 Features
+
+* add config monitor ([77b5a04](https://github.com/justedlev/config-center/commit/77b5a04530333cd00143499fb9e0fa4efb5aedb7))
+
 ## [1.4.2](https://github.com/justedlev/config-center/compare/v1.4.1...v1.4.2) (2025-05-16)
 
 
