@@ -1,9 +1,11 @@
-name: 🔄 Auto Assign Reviewer & Assignee
+name: 🔄 Auto Assign Assignee
 
 on:
   pull_request_target:
-    types: [ opened, synchronize, reopened ]
-    branches: [ main ]
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 permissions:
   pull-requests: write
@@ -14,4 +16,11 @@ jobs:
     name: Auto-assign contributors
     runs-on: ubuntu-latest
     steps:
-      - uses: kentaro-m/auto-assign-action@v2.0.0
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔄 Auto Assign
+        uses: actions-ecosystem/action-add-assignees@v1
+        with:
+          assignees: 'justedlev'
+          github_token: '${{ secrets.GITHUB_TOKEN }}'

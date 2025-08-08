@@ -1,4 +1,16 @@
-"area: java":
+"status: review":
+  - changed-files:
+    - any-glob-to-any-file:
+      - "*"
+
+"type: build":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/pom.xml'
+      - '**/build.gradle'
+      - '**/build.gradle.kts'
+
+"lang: java":
   - changed-files:
     - any-glob-to-any-file:
       - '**/*.java'
@@ -11,16 +23,16 @@
 "area: config":
   - changed-files:
     - any-glob-to-any-file:
-      - '**/config/**'
+      - '**/config*/**'
       - '**/*.yml'
       - '**/*.properties'
 
-"area: spring-boot":
+"area: spring":
   - changed-files:
     - any-glob-to-any-file:
-      - '**/application.yml'
-      - '**/application.properties'
-      - '**/src/main/java/**/config/**'
+      - '**/application*.yml'
+      - '**/application*.properties'
+      - '**/src/main/java/**/config*/**'
       - '**/src/main/java/**/controller/**'
       - '**/src/main/resources/**'
 
@@ -48,3 +60,8 @@
       - '**/*.md'
       - '**/README.md'
       - '**/docs/**'
+
+"type: chore":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/pom.xml'

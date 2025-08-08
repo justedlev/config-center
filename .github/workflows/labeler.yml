@@ -6,6 +6,7 @@ on:
     branches: [ main ]
 
 permissions:
+  contents: read
   pull-requests: write
   issues: write
 
@@ -13,8 +14,13 @@ jobs:
   label:
     name: 📌 Apply labels based on changed files
     runs-on: ubuntu-latest
-
     steps:
+      - name: 📥 Checkout PR code (head)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+
       - name: 🏷️ Label PR by file changes
         uses: actions/labeler@v5
         with:
