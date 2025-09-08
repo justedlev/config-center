@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.5.1](https://github.com/justedlev/config-center/compare/v1.5.0...v1.5.1) (2025-09-08)
+
+
+### 🐛 Bug Fixes
+
+* remove `logging` props ([b2de0b5](https://github.com/justedlev/config-center/commit/b2de0b51b234d848c4cc222ee0f8735fb66c4b61))
+
 ## [1.5.0](https://github.com/justedlev/config-center/compare/v1.4.2...v1.5.0) (2025-08-08)
 
 
