@@ -9,7 +9,8 @@
 
 echo "$0: checking..."
 CONTEXTPATH=${SERVER_SERVLET_CONTEXTPATH:-}
-URL="http://localhost:$SERVER_PORT$CONTEXTPATH/actuator/health"
+PORT=${MANAGEMENT_SERVER_PORT}
+URL="http://localhost:${MANAGEMENT_SERVER_PORT}${CONTEXTPATH}/actuator/health"
 RESPONSE=$(curl -s --fail "$URL")
 STATUS=$(echo "$RESPONSE" | grep -o '"status":"[^"]*"' | cut -d ':' -f2 | tr -d '"')
 echo "$0: status: $STATUS"
