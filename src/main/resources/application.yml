@@ -24,22 +24,14 @@ spring:
     user:
       name: config-server
 management:
-  info:
-    build:
-      enabled: true
-    os:
-      enabled: true
-    defaults:
-      enabled: true
-    java:
-      enabled: true
+  server:
+    port: -1
   endpoints:
-    web:
-      exposure:
-        include: '*'
 logging:
   file:
     path: ./logs
     name: ${LOGGING_FILE_PATH:${logging.file.path}}/latest.log
   threshold:
     console: info
+    access:
+      default: none
