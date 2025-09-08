@@ -4,16 +4,18 @@ server:
     application-display-name: ${spring.application.name}
   error:
     include-message: always
+  compression:
+    enabled: true
 spring:
   application:
-    name: '@project.name@'
+    name: config-center
   profiles:
     active: native
   cloud:
     config:
       server:
         native:
-          search-locations: file:./config.d
+          search-locations: file://${pwd}/config.d
           default-label: main
   security:
     user:
