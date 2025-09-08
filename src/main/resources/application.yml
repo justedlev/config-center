@@ -34,12 +34,6 @@ management:
     web:
       exposure:
         include: '*'
-logging:
-  file:
-    path: ./logs
-    name: ${LOGGING_FILE_PATH:${logging.file.path}}/latest.log
-  threshold:
-    console: info
 security:
   whitelist:
     GET:
