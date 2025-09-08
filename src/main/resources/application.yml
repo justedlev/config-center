@@ -9,11 +9,6 @@ spring:
     name: '@project.name@'
   profiles:
     active: native
-  security:
-    user:
-      name: root
-      password: root
-      roles: system
   cloud:
     config:
       server:
