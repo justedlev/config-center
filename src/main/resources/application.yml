@@ -20,6 +20,9 @@ spring:
         native:
           search-locations: file:./config.d
           default-label: main
+  security:
+    user:
+      name: config-server
 management:
   info:
     build:
@@ -40,22 +43,3 @@ logging:
     name: ${LOGGING_FILE_PATH:${logging.file.path}}/latest.log
   threshold:
     console: info
-security:
-  whitelist:
-    GET:
-      - /webjars/**
-      - /v3/api-docs/**
-      - /*/v3/api-docs/**
-      - /*/*/v3/api-docs/**
-      - /swagger-ui.html
-      - /swagger-ui/**
-      - /swagger-resources
-      - /swagger-resources/**
-      - /configuration/ui
-      - /configuration/security
-      - /actuator/**
-      - /*/actuator/**
-      - /error
-    POST:
-      - /sso/logout
-      - /logout

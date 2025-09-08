@@ -1,0 +1,28 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KC_ISSUER_URI}
+          jwk-set-uri: ${KC_JWKS_URI}
+        opaquetoken:
+          introspection-uri: ${KC_INTROSPECTION_URI}
+          client-id: ${KC_CLIENT_ID}
+          client-secret: ${KC_CLIENT_SECRET}
+config-center:
+  security:
+    whitelist:
+      GET:
+        - /webjars/**
+        - /v3/api-docs/**
+        - /swagger-ui.html
+        - /swagger-ui/**
+        - /swagger-resources
+        - /swagger-resources/**
+        - /configuration/ui
+        - /configuration/security
+        - /actuator/**
+        - /error
+      POST:
+        - /sso/logout
+        - /logout
