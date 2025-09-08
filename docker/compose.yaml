@@ -13,7 +13,6 @@ services:
       - "${SERVER_PORT}:${SERVER_PORT}"
     volumes:
       - ../config.d:${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
-      - ../logs:${LOGGING_FILE_PATH}
     deploy:
       resources:
         limits:
