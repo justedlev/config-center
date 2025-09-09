@@ -10,7 +10,7 @@
     <groupId>io.github.justedlev.msrvs</groupId>
     <artifactId>config-center</artifactId>
     <version>1.5.1</version>
-    <name>config-center</name>
+    <name>Config Center</name>
     <description>Configuration Server</description>
     <url>https://github.com/justedlev/${project.artifactId}</url>
     <licenses>
