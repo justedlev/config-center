@@ -1,5 +1,5 @@
 # ----------< PREPARATION STAGE >------------
-FROM eclipse-temurin:17-jdk-jammy AS deps
+FROM eclipse-temurin:25-jdk-jammy AS deps
 
 WORKDIR /build
 
@@ -38,7 +38,7 @@ WORKDIR /build
 RUN java -Djarmode=tools -jar target/app.jar extract --layers --launcher --destination target/extracted
 
 # ----------< FINAL STAGE >------------
-FROM eclipse-temurin:17-jre-jammy AS final
+FROM eclipse-temurin:25-jre-jammy AS final
 
 LABEL maintainer="Justedlev"
 LABEL name="config-center"
