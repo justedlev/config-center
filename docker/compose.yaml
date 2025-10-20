@@ -13,7 +13,7 @@ services:
       - "8888:8888" # Config server port
       - "7888:7888" # Management port
     volumes:
-      - ../config.d:${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
+      - ../configserver.d:${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
     deploy:
       resources:
         limits:
