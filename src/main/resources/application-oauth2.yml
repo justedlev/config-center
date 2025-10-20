@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KC_ISSUER_URI}
+configcenter:
+  security:
+    whitelist:
+      GET:
+        - /webjars/**
+        - /v3/api-docs/**
+        - /swagger-ui.html
+        - /swagger-ui/**
+        - /swagger-resources/**
+        - /actuator/**
+        - /error
+      POST:
+        - /sso/**
+        - /login/**
+        - /logout
+        - /oauth2/**

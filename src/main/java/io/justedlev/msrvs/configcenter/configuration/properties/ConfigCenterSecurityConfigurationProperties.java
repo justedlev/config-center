@@ -1,4 +1,4 @@
-package io.justedlev.msrvs.configcenter.configuration;
+package io.justedlev.msrvs.configcenter.configuration.properties;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -26,8 +26,11 @@ import java.util.Map;
  */
 @Getter
 @Setter
-@ConfigurationProperties("security")
-public class SecurityProperties {
+@ConfigurationProperties(ConfigCenterSecurityConfigurationProperties.PREFIX)
+public class ConfigCenterSecurityConfigurationProperties {
+    public static final String PREFIX = ConfigCenterConfigurationProperties.PREFIX + ".security";
+    public static final String ROLE_PREFIX = "ROLE_";
+    public static final String SCOPE_PREFIX = "SCOPE_";
     /**
      * A map that holds the HTTP method as the key and an array of allowed endpoint patterns as the value.
      * <p>
@@ -42,4 +45,6 @@ public class SecurityProperties {
      * @see HttpMethod
      */
     private Map<HttpMethod, String[]> whitelist = Map.of();
+    private String rolePrefix = ROLE_PREFIX;
+    private String scopePrefix = SCOPE_PREFIX;
 }
