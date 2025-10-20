@@ -35,4 +35,4 @@ build/
 .vscode/
 
 /logs/
-/config.d/
+/configserver.d/
