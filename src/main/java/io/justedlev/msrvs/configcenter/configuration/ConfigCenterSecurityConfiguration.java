@@ -1,5 +1,7 @@
 package io.justedlev.msrvs.configcenter.configuration;
 
+import io.justedlev.msrvs.configcenter.configuration.properties.ConfigCenterConfigurationProperties;
+import io.justedlev.msrvs.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.oauth2.client.ConditionalOnOAuth2ClientRegistrationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -13,13 +15,16 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@EnableConfigurationProperties(SecurityProperties.class)
+@ConditionalOnOAuth2ClientRegistrationProperties
+@EnableConfigurationProperties({
+        ConfigCenterConfigurationProperties.class,
+        ConfigCenterSecurityConfigurationProperties.class,
+})
 @RequiredArgsConstructor
-public class SecurityConfiguration {
-    private final SecurityProperties properties;
+public class ConfigCenterSecurityConfiguration {
+    private final ConfigCenterSecurityConfigurationProperties properties;
 
     @Bean
-    @ConditionalOnOAuth2ClientRegistrationProperties
     public SecurityFilterChain securityFilterChain(@NonNull HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(CsrfConfigurer::disable)
