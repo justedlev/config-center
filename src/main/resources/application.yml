@@ -1,28 +1,39 @@
 server:
   port: 8888
   servlet:
-    application-display-name: ${spring.application.name}
+    application-display-name: "Config Center"
   error:
     include-message: always
   compression:
     enabled: true
 spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
   application:
     name: config-center
   profiles:
     active: native
+    group:
+      standalone:
+        - native
+        - management
   cloud:
+    bus:
+      id: configserver
     config:
       server:
         native:
-          search-locations: file://${pwd}/config.d
+          search-locations:
+            - file:/@project.basedir@/configserver.d
+            - file:/${user.home}/configserver.d
           default-label: main
   security:
     user:
-      name: config-server
+      name: configserver
+    oauth2:
+      resourceserver:
+        enabled: false
 management:
   server:
     port: -1
-  endpoints:
-    access:
-      default: none
