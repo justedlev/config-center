@@ -10,6 +10,7 @@ spring:
   autoconfigure:
     exclude:
       - org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
+      - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
   application:
     name: config-center
   profiles:
@@ -17,10 +18,13 @@ spring:
     group:
       standalone:
         - native
+        - bus
         - management
+  rabbitmq:
+    enabled: false
   cloud:
     bus:
-      id: configserver
+      enabled: false
     config:
       server:
         native:

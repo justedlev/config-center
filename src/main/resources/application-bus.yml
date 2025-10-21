@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    enabled: true
+  cloud:
+    bus:
+      enabled: true
+      id: configserver
