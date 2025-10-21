@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.github.justedlev.msrvs</groupId>
     <artifactId>config-center</artifactId>
-    <version>1.6.0</version>
+    <version>1.7.0</version>
     <name>config-center</name>
     <description>Configuration Server</description>
     <url>https://github.com/justedlev/${project.artifactId}</url>

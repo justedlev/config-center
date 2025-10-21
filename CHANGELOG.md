@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.7.0](https://github.com/justedlev/config-center/compare/v1.6.0...v1.7.0) (2025-10-21)
+
+
+### 🚀 Features
+
+* **config:** extract `bus` profile ([fcb8c5f](https://github.com/justedlev/config-center/commit/fcb8c5f2721c31faa170c16a93828a2499e2b17a))
+
 ## [1.6.0](https://github.com/justedlev/config-center/compare/v1.5.1...v1.6.0) (2025-10-20)
 
 
