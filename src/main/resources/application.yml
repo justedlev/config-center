@@ -34,8 +34,9 @@ spring:
     user:
       name: configserver
     oauth2:
+      enabled: false
       resourceserver:
-        enabled: false
+        enabled: ${spring.security.oauth2.enabled:false}
   web:
     error:
       include-message: always
