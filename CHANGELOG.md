@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.8.0](https://github.com/justedlev/config-center/compare/v1.7.0...v1.8.0) (2025-12-20)
+
+
+### 🚀 Features
+
+* **config:** add spring autoconfigure factory ([8fa0779](https://github.com/justedlev/config-center/commit/8fa07797efaa5d3eb651473460dcd02a4ec0dec8))
+* migrate to spring boot 4 ([f90bca9](https://github.com/justedlev/config-center/commit/f90bca97f13374083bf3451a66da8679dfd40191))
+* update security configuration ([c08afdb](https://github.com/justedlev/config-center/commit/c08afdb0824b8eb8cb2f90a5b5614572fb94816e))
+
+
+### 🐛 Bug Fixes
+
+* **config:** use `ConfigCenterSecurityConfigurationProperties` ([97c257b](https://github.com/justedlev/config-center/commit/97c257bb986d1811c401a5c95abe558f6740cd3b))
+
+
+### ♻️ Refactoring
+
+* rename package form `io.justedlev.msrvs.configcenter.autoconfiguration` to `io.justedlev.msrvs.configcenter.autoconfigure` ([363fee6](https://github.com/justedlev/config-center/commit/363fee675289c9c7b82976a9c4e449c722905063))
+
 ## [1.7.0](https://github.com/justedlev/config-center/compare/v1.6.0...v1.7.0) (2025-10-21)
 
 
