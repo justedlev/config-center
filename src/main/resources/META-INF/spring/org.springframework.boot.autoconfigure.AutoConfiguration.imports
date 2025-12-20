@@ -1,0 +1,2 @@
+io.justedlev.msrvs.configcenter.autoconfigure.ConfigCenterOAuth2ResourceServerAutoConfiguration
+io.justedlev.msrvs.configcenter.autoconfigure.ConfigCenterRabbitMQAutoConfiguration
