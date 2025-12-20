@@ -1,4 +1,4 @@
-package io.justedlev.msrvs.configcenter.autoconfiguration;
+package io.justedlev.msrvs.configcenter.autoconfigure;
 
 import io.justedlev.msrvs.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
 import lombok.Getter;
