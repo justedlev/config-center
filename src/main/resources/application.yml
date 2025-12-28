@@ -2,13 +2,15 @@ server:
   port: 8888
   servlet:
     application-display-name: "Config Center"
+  error:
+    include-message: always
   compression:
     enabled: true
 spring:
   autoconfigure:
     exclude:
-      - org.springframework.boot.security.oauth2.server.resource.autoconfigure.servlet.OAuth2ResourceServerAutoConfiguration
-      - org.springframework.boot.amqp.autoconfigure.RabbitAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
+      - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
   application:
     name: config-center
   profiles:
@@ -34,12 +36,8 @@ spring:
     user:
       name: configserver
     oauth2:
-      enabled: false
       resourceserver:
-        enabled: ${spring.security.oauth2.enabled:false}
-  web:
-    error:
-      include-message: always
+        enabled: false
 management:
   server:
     port: -1
