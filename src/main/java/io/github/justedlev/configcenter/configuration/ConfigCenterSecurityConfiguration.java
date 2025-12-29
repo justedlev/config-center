@@ -1,7 +1,7 @@
-package io.justedlev.msrvs.configcenter.configuration;
+package io.github.justedlev.configcenter.configuration;
 
-import io.justedlev.msrvs.configcenter.configuration.properties.ConfigCenterConfigurationProperties;
-import io.justedlev.msrvs.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
+import io.github.justedlev.configcenter.configuration.properties.ConfigCenterConfigurationProperties;
+import io.github.justedlev.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.autoconfigure.security.oauth2.client.ConditionalOnOAuth2ClientRegistrationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

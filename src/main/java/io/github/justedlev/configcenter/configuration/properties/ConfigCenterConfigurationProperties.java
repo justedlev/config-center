@@ -1,4 +1,4 @@
-package io.justedlev.msrvs.configcenter.configuration.properties;
+package io.github.justedlev.configcenter.configuration.properties;
 
 import lombok.Getter;
 import lombok.Setter;

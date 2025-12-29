@@ -1,6 +1,6 @@
-package io.justedlev.msrvs.configcenter.autoconfigure;
+package io.github.justedlev.configcenter.autoconfigure;
 
-import io.justedlev.msrvs.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
+import io.github.justedlev.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
