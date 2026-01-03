@@ -12,5 +12,5 @@ public class ConfigCenterConfigurationProperties {
     public static final String PREFIX = "configcenter";
     private boolean enabled = true;
     @NestedConfigurationProperty
-    private ConfigCenterConfigurationProperties security;
+    private ConfigCenterSecurityConfigurationProperties security;
 }
