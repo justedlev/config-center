@@ -27,6 +27,8 @@ spring:
       enabled: false
     config:
       server:
+        jdbc:
+          enabled: false
         native:
           search-locations:
             - file:/@project.basedir@/configserver.d
