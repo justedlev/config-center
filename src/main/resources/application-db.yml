@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      server:
+        jdbc:
+          enabled: true
+  datasource:
+    url: jdbc:h2:file:${user.home}/.h2/${spring.application.name};DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+    username: "sa"
+    password: "{noop}sa"
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
