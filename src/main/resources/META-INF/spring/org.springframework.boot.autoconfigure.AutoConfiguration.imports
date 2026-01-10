@@ -1,2 +1,3 @@
 io.github.justedlev.configcenter.autoconfigure.ConfigCenterOAuth2ResourceServerAutoConfiguration
 io.github.justedlev.configcenter.autoconfigure.ConfigCenterRabbitMQAutoConfiguration
+io.github.justedlev.configcenter.autoconfigure.ConfigCenterJdbcTemplateAutoConfiguration
