@@ -1,7 +1,7 @@
 server:
   port: 8888
   servlet:
-    application-display-name: "Config Center"
+    application-display-name: "Config Server"
   error:
     include-message: always
   compression:
@@ -12,7 +12,7 @@ spring:
       - org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
       - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
   application:
-    name: config-center
+    name: config-server
   profiles:
     active: native
     group:
