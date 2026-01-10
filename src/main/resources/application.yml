@@ -17,6 +17,9 @@ spring:
   profiles:
     active: native
     group:
+      jdbc:
+        - jdbc
+        - db
       standalone:
         - native
         - bus
