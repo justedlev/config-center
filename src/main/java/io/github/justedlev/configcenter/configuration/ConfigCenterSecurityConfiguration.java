@@ -1,13 +1,14 @@
 package io.github.justedlev.configcenter.configuration;
 
+import io.github.justedlev.configcenter.autoconfigure.ConfigCenterOAuth2ResourceServerAutoConfiguration;
 import io.github.justedlev.configcenter.configuration.properties.ConfigCenterConfigurationProperties;
 import io.github.justedlev.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.security.oauth2.client.ConditionalOnOAuth2ClientRegistrationProperties;
+import org.jspecify.annotations.NonNull;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.lang.NonNull;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
@@ -15,7 +16,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@ConditionalOnOAuth2ClientRegistrationProperties
+@ConditionalOnBean(ConfigCenterOAuth2ResourceServerAutoConfiguration.class)
 @EnableConfigurationProperties({
         ConfigCenterConfigurationProperties.class,
         ConfigCenterSecurityConfigurationProperties.class,
@@ -25,7 +26,7 @@ public class ConfigCenterSecurityConfiguration {
     private final ConfigCenterSecurityConfigurationProperties properties;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(@NonNull HttpSecurity httpSecurity) throws Exception {
+    public SecurityFilterChain securityFilterChain(@NonNull HttpSecurity httpSecurity) {
         return httpSecurity
                 .csrf(CsrfConfigurer::disable)
                 .sessionManagement(customizer ->
