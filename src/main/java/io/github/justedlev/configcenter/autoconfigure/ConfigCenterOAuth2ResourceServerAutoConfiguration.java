@@ -1,14 +1,14 @@
-package io.justedlev.msrvs.configcenter.autoconfiguration;
+package io.github.justedlev.configcenter.autoconfigure;
 
-import io.justedlev.msrvs.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
+import io.github.justedlev.configcenter.configuration.properties.ConfigCenterSecurityConfigurationProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration;
 import org.springframework.boot.context.properties.PropertyMapper;
+import org.springframework.boot.security.oauth2.server.resource.autoconfigure.OAuth2ResourceServerProperties;
+import org.springframework.boot.security.oauth2.server.resource.autoconfigure.servlet.OAuth2ResourceServerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.convert.converter.Converter;
@@ -27,7 +27,6 @@ import java.util.Collection;
 @ConditionalOnBooleanProperty(prefix = "spring.security.oauth2.resourceserver", name = "enabled", matchIfMissing = true)
 @Import(OAuth2ResourceServerAutoConfiguration.class)
 public class ConfigCenterOAuth2ResourceServerAutoConfiguration {
-    private static final PropertyMapper PROPERTY_MAPPER = PropertyMapper.get().alwaysApplyingWhenNonNull();
     private static final ExpressionParser PARSER = new SpelExpressionParser();
 
     @Getter
@@ -40,7 +39,10 @@ public class ConfigCenterOAuth2ResourceServerAutoConfiguration {
             Collection<Converter<Jwt, Collection<GrantedAuthority>>> converters
     ) {
         var jwtAuthenticationConverter = new JwtAuthenticationConverter();
-        PROPERTY_MAPPER.from(properties.getJwt()::getPrincipalClaimName).to(jwtAuthenticationConverter::setPrincipalClaimName);
+        PropertyMapper.get()
+                .from(properties.getJwt()::getPrincipalClaimName)
+                .whenHasText()
+                .to(jwtAuthenticationConverter::setPrincipalClaimName);
         jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(new DelegatingJwtGrantedAuthoritiesConverter(converters));
 
         return jwtAuthenticationConverter;
@@ -49,9 +51,18 @@ public class ConfigCenterOAuth2ResourceServerAutoConfiguration {
     @Bean
     JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter(OAuth2ResourceServerProperties properties) {
         var converter = new JwtGrantedAuthoritiesConverter();
-        PROPERTY_MAPPER.from(properties.getJwt()::getAuthorityPrefix).to(converter::setAuthorityPrefix);
-        PROPERTY_MAPPER.from(properties.getJwt()::getAuthoritiesClaimDelimiter).to(converter::setAuthoritiesClaimDelimiter);
-        PROPERTY_MAPPER.from(properties.getJwt()::getAuthoritiesClaimName).to(converter::setAuthoritiesClaimName);
+        PropertyMapper.get()
+                .from(properties.getJwt()::getAuthorityPrefix)
+                .whenHasText()
+                .to(converter::setAuthorityPrefix);
+        PropertyMapper.get()
+                .from(properties.getJwt()::getAuthoritiesClaimDelimiter)
+                .whenHasText()
+                .to(converter::setAuthoritiesClaimDelimiter);
+        PropertyMapper.get()
+                .from(properties.getJwt()::getAuthoritiesClaimName)
+                .whenHasText()
+                .to(converter::setAuthoritiesClaimName);
 
         return converter;
     }

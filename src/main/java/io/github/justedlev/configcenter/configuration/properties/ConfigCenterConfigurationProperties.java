@@ -1,4 +1,4 @@
-package io.justedlev.msrvs.configcenter.configuration.properties;
+package io.github.justedlev.configcenter.configuration.properties;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,5 +12,5 @@ public class ConfigCenterConfigurationProperties {
     public static final String PREFIX = "configcenter";
     private boolean enabled = true;
     @NestedConfigurationProperty
-    private ConfigCenterConfigurationProperties security;
+    private ConfigCenterSecurityConfigurationProperties security;
 }

@@ -5,8 +5,8 @@
 
 <div id="badges" align="center">
 
-[![language](https://img.shields.io/badge/Java%2017-e6892e.svg?logo=openjdk&logoColor=white)](https://github.com/justedlev/config-center)
-[![framework](https://img.shields.io/badge/Spring%20Boot%203-6DB33F.svg?logo=springboot&logoColor=white)](https://docs.spring.io/spring-boot/index.html)
+[![language](https://img.shields.io/badge/Java%2021-e6892e.svg?logo=openjdk&logoColor=white)](https://github.com/justedlev/config-center)
+[![framework](https://img.shields.io/badge/Spring%20Boot%204-6DB33F.svg?logo=springboot&logoColor=white)](https://docs.spring.io/spring-boot/index.html)
 [![Docker Image Version](https://img.shields.io/docker/v/justedlev/config-center?logo=docker&label=config-center)](https://hub.docker.com/repository/docker/justedlev/config-center)
 [![license](https://img.shields.io/github/license/justedlev/config-center)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 [![stars](https://img.shields.io/github/stars/justedlev/config-center)](https://github.com/justedlev/config-center/star)
@@ -16,7 +16,7 @@
 
 ## 📋 About
 
-Simple configuration server based on `🍃 Spring Boot 3` and `🐰 RabbitMQ`
+Simple configuration server based on `🍃 Spring Boot 4` and `🐰 RabbitMQ`
 
 ## 🧾 References
 
@@ -43,14 +43,6 @@ An example of the `docker compose` file based on the same [.env](/.env)
 ```yaml
 name: justedlev-msrv
 services:
-  configuration-server:
-    container_name: config-center
-    image: justedlev/config-center:latest
-    ports:
-      - '8976:${SERVER_PORT}'
-    volumes:
-      - ./config.d:${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATION}
-      - ./logs:/var/log/${SPRING_APPLICATION_NAME}
   config.justedlev.com:
     tty: true
     environment:

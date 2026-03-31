@@ -3,8 +3,12 @@ name: 🚀 Release
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - README.md
   release:
     types: [ created ]
+    paths-ignore:
+      - README.md
   workflow_dispatch:
 
 permissions:
@@ -19,7 +23,7 @@ jobs:
     steps:
       - id: checkout
         name: 📥 Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - id: release
         name: 🔄 Run release-please
