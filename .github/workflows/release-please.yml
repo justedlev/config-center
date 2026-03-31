@@ -3,8 +3,12 @@ name: 🚀 Release
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - README.md
   release:
     types: [ created ]
+    paths-ignore:
+      - README.md
   workflow_dispatch:
 
 permissions:
