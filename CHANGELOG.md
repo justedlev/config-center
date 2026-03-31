@@ -4,6 +4,42 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [2.0.0](https://github.com/justedlev/config-center/compare/v1.7.0...v2.0.0) (2026-03-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump java to 21
+* migrated to spring boot v4
+
+### 🚀 Features
+
+* add `org.springframework.boot.autoconfigure.AutoConfiguration.imports` ([8cc7e1e](https://github.com/justedlev/config-center/commit/8cc7e1e8e3fda4a2e30fd156b6f5b7830101919c))
+* bump java to 21 ([e9a4455](https://github.com/justedlev/config-center/commit/e9a44556828c30ffa393c08609776f2525f64f19))
+* **config:** add spring autoconfigure factory ([8fa0779](https://github.com/justedlev/config-center/commit/8fa07797efaa5d3eb651473460dcd02a4ec0dec8))
+* migrate to spring boot 4 ([f90bca9](https://github.com/justedlev/config-center/commit/f90bca97f13374083bf3451a66da8679dfd40191))
+* migrated to spring boot v4 ([db8dd4c](https://github.com/justedlev/config-center/commit/db8dd4c8cce2710f8e4ced3b95fff664f3e03ddd))
+* update security configuration ([c08afdb](https://github.com/justedlev/config-center/commit/c08afdb0824b8eb8cb2f90a5b5614572fb94816e))
+
+
+### 🐛 Bug Fixes
+
+* **config:** use `ConfigCenterSecurityConfigurationProperties` ([97c257b](https://github.com/justedlev/config-center/commit/97c257bb986d1811c401a5c95abe558f6740cd3b))
+* use `ConfigCenterSecurityConfigurationProperties` ([73f4645](https://github.com/justedlev/config-center/commit/73f46457f4922c2589ed0f0e59bf9604a0f74399))
+
+
+### ♻️ Refactoring
+
+* **props:** update app name ([bcd9447](https://github.com/justedlev/config-center/commit/bcd944768903255cfff4b5ad8515a34b028b8281))
+* rename main package to `io.github.justedlev.configcenter` ([fbdb40a](https://github.com/justedlev/config-center/commit/fbdb40a9712841cc720aaf620239579c9f662dc5))
+* rename package form `io.justedlev.msrvs.configcenter.autoconfiguration` to `io.justedlev.msrvs.configcenter.autoconfigure` ([363fee6](https://github.com/justedlev/config-center/commit/363fee675289c9c7b82976a9c4e449c722905063))
+* rename package from `io.justedlev.msrvs.configcenter.autoconfiguration` to `io.justedlev.msrvs.configcenter.autoconfigure` ([2df56b3](https://github.com/justedlev/config-center/commit/2df56b3e26d8c4d03e3ba568973da476b9a3f86a))
+
+
+### 📚 Documentation
+
+* update `README.md` ([c2baf58](https://github.com/justedlev/config-center/commit/c2baf5885ff84e9b0ab66799d174e8525f0fff52))
+
 ## [1.7.0](https://github.com/justedlev/config-center/compare/v1.6.0...v1.7.0) (2025-10-21)
 
 
