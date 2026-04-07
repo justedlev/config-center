@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [2.0.1](https://github.com/justedlev/config-center/compare/v2.0.0...v2.0.1) (2026-04-07)
+
+
+### 🧹 Chores
+
+* release 2.0.1 ([31e84a1](https://github.com/justedlev/config-center/commit/31e84a1f79cdaa29f81262999da4b80a5f350947))
+
 ## [2.0.0](https://github.com/justedlev/config-center/compare/v1.7.0...v2.0.0) (2026-03-31)
 
 
