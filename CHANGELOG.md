@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [2.0.1](https://github.com/justedlev/config-center/compare/v2.0.0...v2.0.1) (2026-07-14)
+
+
+### 🐛 Bug Fixes
+
+* parameterize spring.cloud.bus.id in application-bus.yml ([b745aef](https://github.com/justedlev/config-center/commit/b745aef79e209b4e6483f76f16c98a9d7dd8b825))
+* update import path for OAuth2ResourceServerAutoConfiguration ([b221ae9](https://github.com/justedlev/config-center/commit/b221ae959a7feb90a742d33a47241c313de3cb3b))
+
 ## [2.0.0](https://github.com/justedlev/config-center/compare/v1.7.0...v2.0.0) (2026-03-31)
 
 
