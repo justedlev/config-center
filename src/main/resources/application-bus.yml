@@ -4,4 +4,4 @@ spring:
   cloud:
     bus:
       enabled: true
-      id: configserver
+      id: ${spring.application.name:config-server}
